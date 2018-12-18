@@ -1,0 +1,147 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+h1 {
+    font-family: sans-serif;
+    font-weight: 300;
+	color: #cc0066
+}
+
+/*
+ * Styles for the board of cards
+ */
+
+.board {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(40deg, #ccccb3 50%, Pink 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.board .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.board .card.open {
+    transform: rotateY(0);
+    background: pink;
+    cursor: default;
+    align-items: center;
+    justify-content: center;
+}
+
+.board .card.show {
+    font-size: 38px;
+    cursor: default;
+    justify-content: center;
+    align-items: center;
+}
+
+.board .card.cardsMatch {
+    cursor: default;
+    background: pink;
+    font-size: 38px;
+    justify-content: center;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.scorePan {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.scorePan .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.scorePan .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.scorePan .restart {
+    float: right;
+    cursor: pointer;
+}
+
+.star {
+     display: inline;
+     margin: 2px;
+}
+
+@media only screen and (max-width: 800px){
+    .board .card{
+      width: 100px;
+      height: 120px;
+
+    }
+  
+    .board {
+      width: 500px;
+    }
+}
+  
+@media only screen and (max-width: 450px){
+    .board .card{
+      width: 53px;
+      height: 53px;
+      line-height: 53px;
+
+    }
+  
+    .board {
+      width: 300px;
+
+    }
